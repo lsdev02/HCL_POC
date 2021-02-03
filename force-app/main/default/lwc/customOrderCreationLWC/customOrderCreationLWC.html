@@ -4,8 +4,8 @@
             <lightning-messages>
             </lightning-messages>
             <div class="slds-p-around--medium slds-grid slds-wrap">
-                <lightning-input-field class="slds-size--1-of-2 left-field-space" field-name="visitid__c" value={visitId} disabled="true"></lightning-input-field>
-                <lightning-input-field class="slds-size--1-of-2 right-field-space" field-name="lab_accession_id__c" value={labAccessionId} disabled="true"></lightning-input-field>
+                <lightning-input-field class="slds-size--1-of-2 left-field-space slds-hide" field-name="visitid__c" value={visitId} disabled="true"></lightning-input-field>
+                <lightning-input-field class="slds-size--1-of-2 right-field-space slds-hide" field-name="lab_accession_id__c" value={labAccessionId} disabled="true"></lightning-input-field>
                 <lightning-input-field class="slds-size--1-of-2 left-field-space" field-name="visitdate__c" onchange={handleVisitDateChange} required="true"></lightning-input-field>
                 <lightning-input-field class="slds-size--1-of-2 right-field-space" field-name="Order_Code__c"  value={orderCode} disabled="true"></lightning-input-field>
                 <lightning-input-field class="slds-size--1-of-2 left-field-space slds-hide" field-name="EffectiveDate" value={orderStartDate} disabled="true"></lightning-input-field>
@@ -31,7 +31,7 @@
             <div class="slds-p-top_medium">
                 <div class="modal-footer slds-modal__footer slds-size_1-of-1">
                     <div class="forceChangeRecordTypeFooter">
-                        <lightning-button type="submit" variant="brand" label="Save"></lightning-button>
+                        <lightning-button type="submit" variant="brand" label="Submit"></lightning-button>
                     </div>
                 </div>
             </div>
