@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="New Order" icon-name="standard:orders">
+        <lightning-record-edit-form object-api-name="Order" onsubmit={handleSubmit} onsuccess={handleSuccess}>
+            <lightning-messages>
+            </lightning-messages>
+            <div class="slds-p-around--medium slds-grid slds-wrap">
+                <lightning-input-field class="slds-size--1-of-2 left-field-space" field-name="visitid__c" value={visitId} disabled="true"></lightning-input-field>
+                <lightning-input-field class="slds-size--1-of-2 right-field-space" field-name="lab_accession_id__c" value={labAccessionId} disabled="true"></lightning-input-field>
+                <lightning-input-field class="slds-size--1-of-2 left-field-space" field-name="visitdate__c" onchange={handleVisitDateChange} required="true"></lightning-input-field>
+                <lightning-input-field class="slds-size--1-of-2 right-field-space" field-name="Order_Code__c"  value={orderCode} disabled="true"></lightning-input-field>
+                <lightning-input-field class="slds-size--1-of-2 left-field-space slds-hide" field-name="EffectiveDate" value={orderStartDate} disabled="true"></lightning-input-field>
+                <lightning-input-field class="slds-size--1-of-2 right-field-space slds-hide" field-name="Status" value={orderStatus} disabled="true"></lightning-input-field>
+                <lightning-input-field class="slds-size--1-of-2 left-field-space" field-name="hospitalid__c" value={hospitalId} required="true"></lightning-input-field>
+                <lightning-input-field class="slds-size--1-of-2 right-field-space" field-name="Vet_Name__c" value={vetId} required="true"></lightning-input-field>
+                <!-- <label data-main-label="true" class="slds-form-element__label" for="petidfield">
+                    <abbr title="required" class="slds-required">*</abbr>Pet Name
+                </label><br/> -->
+                <lightning-input-field id="petidfield" class="slds-size--1-of-2 left-field-space" field-name="AccountId" value={petId} onchange={handlePetChange} required="true"></lightning-input-field>
+                <lightning-input-field class="slds-size--1-of-2 right-field-space" field-name="Weight_in_Kg__c" onchange={handleWeightChange}></lightning-input-field>
+                <lightning-input-field class="slds-size--1-of-1" field-name="Medical_Concern__c" onchange={handleConcernChange} required="true"></lightning-input-field>
+                <lightning-input-field class="slds-size--1-of-2 left-field-space" field-name="Discount__c" value={discountValue} onchange={handleDiscountChange}></lightning-input-field>
+                <lightning-input class="slds-size--1-of-2 right-field-space" label="Total" value={totalValue} disabled="true"></lightning-input>
+                <lightning-checkbox-group class="slds-size--1-of-2 left-field-space" name="Checkbox Group" label="Test List"
+                    options={testList}
+                    value={testValues}
+                    onchange={handleTestChange}>
+                </lightning-checkbox-group>
+                <lightning-input-field class="slds-size--1-of-1 slds-hide" field-name="Recommends__c" value={recommends} disabled="true"></lightning-input-field>
+                <lightning-input-field class="slds-size--1-of-1 slds-hide" field-name="Pricebook2Id" value={pricebookId} disabled="true"></lightning-input-field>
+            </div>
+            <div class="slds-p-top_medium">
+                <div class="modal-footer slds-modal__footer slds-size_1-of-1">
+                    <div class="forceChangeRecordTypeFooter">
+                        <lightning-button type="submit" variant="brand" label="Save"></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </lightning-record-edit-form>
+    </lightning-card>
+
+</template>
